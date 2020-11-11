@@ -35,5 +35,121 @@ int main() {
     return 0;
 }
 
+//////////////////////////////////////////////////////////////////
+
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <set>
+#include <map>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+    map<string,int> m;
+    int n,a,c;
+    string b;
+    cin>>n;
+    for(int i=0; i<n;i++){
+     cin>>a;
+     if (a==1){
+         cin>>b>>c;
+         map<string,int>::iterator it=m.find(b);
+         if(it==m.end()){
+               m.insert(make_pair(b,c));
+         }
+         else{
+             m[b]=m[b]+c;
+         }
+       
+     }   
+     if (a==2){
+         cin>>b;
+         m.erase(b);
+     }
+     if(a==3){
+         cin>>b;
+         map<string,int>::iterator it=m.find(b);
+         if(it==m.end()){
+             cout<<"0"<<endl;
+         }
+         else{
+         cout<<m[b]<<endl;
+         }
+     }
+    }
+    
+      
+    return 0;
+}
+
+
+
+//////////////////////////////////////////////////////////
+
+
+#include <sstream>
+#include <vector>
+#include <iostream>
+using namespace std;
+
+vector<int> parseInts(string str) {
+	// Complete this function
+    stringstream ss(str);
+    int a;
+    vector<int> vec;
+
+    while (ss >> a){
+        vec.push_back(a);
+
+        if (ss.peek() == ','){
+            ss.ignore();
+        }
+    }
+
+    return vec;
+    
+}
+
+int main() {
+    string str;
+    cin >> str;
+    vector<int> integers = parseInts(str);
+    for(int i = 0; i < integers.size(); i++) {
+        cout << integers[i] << "\n";
+        }
+    
+    return 0;
+}
+///////////////////////
+
+
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    int n;
+    cin>>n;
+    int a[n];
+    for (int i=0;i<n;i++){
+        cin>>a[i];
+    }
+    for(int j=n-1;j>=0;j--){
+        cout<<a[j]<<" ";
+    }
+    
+    return 0;
+}
+
+
 
 
