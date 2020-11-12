@@ -6,8 +6,23 @@ vector<string> split_string(string);
 
 // Complete the circularArrayRotation function below.
 vector<int> circularArrayRotation(vector<int> a, int k, vector<int> queries) {
-
-
+    int n,x,z;
+    n=a.size();
+    vector<int> result;
+    for(int i=0;i<k;i++){
+        z=a[n-1];
+    for(int j=n;j>0;j--){
+        a[j]=a[j-1];        
+    }
+    a[0]=z;
+    }
+    vector<int>::iterator it=queries.begin();
+    while(it!=queries.end()){
+        x=*it;
+        cout<<a[x]<<endl;
+    }
+    
+    return 0;
 }
 
 int main()
@@ -50,13 +65,6 @@ int main()
 
     vector<int> result = circularArrayRotation(a, k, queries);
 
-    for (int i = 0; i < result.size(); i++) {
-        fout << result[i];
-
-        if (i != result.size() - 1) {
-            fout << "\n";
-        }
-    }
 
     fout << "\n";
 
